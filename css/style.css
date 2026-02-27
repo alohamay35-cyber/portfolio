@@ -643,7 +643,7 @@ h2.hero-title {
 }
 
 .work-detail h1 {
-  font-size: clamp(24px, 4vw, 30px);
+  font-size: clamp(20px, 5vw, 30px);
   margin-bottom: 50px;
 }
 
