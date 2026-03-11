@@ -1151,6 +1151,11 @@ PORTFOLIO PRINT LAYOUT
     padding-top:0;
   }
 
+  .section {
+    margin:0;
+    padding:0;
+}
+
   /* =========================
      HEADINGS
   ========================= */
@@ -1187,6 +1192,24 @@ PORTFOLIO PRINT LAYOUT
   }
 
   /* =========================
+    表紙
+  ========================= */
+
+  .container:first-of-type {
+    page-break-after: always; /* このコンテナの後で必ず改ページ */
+    break-after: page;
+  }
+  #concept {
+    page-break-before: always; /* 新しいページから開始 */
+    break-before: page;
+  }
+
+  #strength {
+    page-break-before: auto; /* Conceptの後に続く */
+    break-before: auto;
+  }
+
+  /* =========================
      CONCEPT / STRENGTH
   ========================= */
 
@@ -1204,6 +1227,7 @@ PORTFOLIO PRINT LAYOUT
     flex-direction: column !important;
     gap: 5mm;
     align-items: stretch;
+    margin-top: 0;
   }
 
   #strength .strength-item{
@@ -1215,6 +1239,8 @@ PORTFOLIO PRINT LAYOUT
     min-height: 25mm;
     box-sizing: border-box;
     page-break-inside: avoid;
+    break-inside: avoid;
+    border-color: #bbb;
   }
   .strength-item p { margin-right: 10mm;}
   .strength-item h3 { margin-bottom: 1.5mm;}
