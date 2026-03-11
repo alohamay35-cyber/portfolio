@@ -1087,3 +1087,336 @@ width: 30%;
   .approach-card { padding: 20px; text-align: justify;}
 
 }
+
+/* ==================================
+PORTFOLIO PRINT LAYOUT
+================================== */
+
+@media print {
+
+  /* =========================
+     PAGE
+  ========================= */
+
+  @page {
+    size: A4;
+    margin: 16mm;
+  }
+
+  html, body {
+    background:#fff !important;
+    color:#333;
+    font-size:10.5pt;
+    line-height:1.55;
+    margin:0;
+  }
+  body { padding-top: 0; }
+
+  /* =========================
+     不要UI削除
+  ========================= */
+
+  header,
+  nav,
+  footer,
+  button,
+  .btn,
+  .menu,
+  .hamburger,
+  iframe,
+  video{
+    display:none !important;
+  }
+
+  /* =========================
+     LAYOUT RESET
+  ========================= */
+
+  main,
+  .container,
+  .wrapper{
+    width:100%;
+    max-width:100%;
+    margin:0;
+    padding:0;
+  }
+
+  section{
+    margin:0 0 6mm 0;
+    padding:0;
+  }
+
+  section:first-of-type{
+    margin-top:0;
+    padding-top:0;
+  }
+
+  /* =========================
+     HEADINGS
+  ========================= */
+
+  h1{
+    font-size:20pt;
+    margin:0 0 6mm 0;
+    color:#111;
+  }
+
+  h2{
+    font-size:15pt;
+    /**border-bottom:1px solid #666;**/
+    padding-bottom:1.5mm;
+    margin:6mm 0 6mm;
+    color:#111;
+  }
+
+  h3{
+    font-size:11pt;
+    margin-bottom:2mm;
+    color:#111;
+  }
+
+  p{
+    margin-bottom:2.5mm;
+  }
+  p, h3, ul, ol, li {
+    page-break-inside: avoid;
+  }
+
+  small{
+    color:#666;
+  }
+
+  /* =========================
+     CONCEPT / STRENGTH
+  ========================= */
+
+  #concept,
+  #strength{
+    padding:4mm 0;
+  }
+  #strength .strength-list{
+    display:block !important;
+    grid-template-columns:none !important;
+  }
+
+  #strength .strength-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5mm;
+    align-items: stretch;
+  }
+
+  #strength .strength-item{
+    display: block;
+    margin:0 0 5mm !important;
+    padding:10mm;
+    padding-right: 30mm;
+    width:100% !important;
+    min-height: 25mm;
+    box-sizing: border-box;
+    page-break-inside: avoid;
+  }
+  .strength-item p { margin-right: 10mm;}
+  .strength-item h3 { margin-bottom: 1.5mm;}
+  .strength-number {left: auto; top:0; right: 30px; }
+  
+
+  /* =========================
+     WORKS GRID
+  ========================= */
+
+  #works{
+    padding:4mm 0;
+  }
+
+  .works-grid,
+  .products-grid,
+  .grid{
+
+    display:grid !important;
+    grid-template-columns:repeat(3,1fr);
+    gap:6mm;
+
+  }
+
+  /* =========================
+     WORKS CARD
+  ========================= */
+
+  .works-item,
+  .product,
+  .card{
+
+    border:1px solid #ccc;
+    padding:4mm;
+    page-break-inside:avoid;
+    display:flex;
+    flex-direction:column;
+
+  }
+  .work-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  }
+  .work-card img{
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin-bottom:2mm;
+  }
+
+  .work-card h3{
+    font-size:11pt;
+    margin-bottom:1.5mm;
+    margin-top:2mm;
+    line-height:1.3;
+  }
+  .work-card p{
+  flex-grow:1;
+  }
+
+  .work-card,
+  .approach-card,
+  .work-image,
+  .work-image-app img {
+    page-break-inside: avoid;   /* ブラウザ印刷用 */
+    break-inside: avoid;        /* CSS3対応ブラウザ用 */
+  }
+
+  .work-image-app {
+    flex-direction: column;
+    gap: 4mm;
+  }
+
+  .work-image-app img {
+    width: 100%;
+    max-width: 180mm;
+    height: auto;
+    display: block;
+    margin-bottom: 4mm;
+  }
+
+
+
+  /* =========================
+     IMAGE
+  ========================= */
+
+  img{
+    width:100%;
+    height:auto;
+  }
+
+  /* =========================
+     LIST
+  ========================= */
+
+  ul{
+    margin-left:4mm;
+  }
+
+  li{
+    margin-bottom:1.5mm;
+  }
+
+  /* =========================
+     LINK
+  ========================= */
+
+  a{
+    color:#333;
+    text-decoration:none;
+  }
+
+  /* =========================
+     PAGE BREAK
+  ========================= */
+
+  #about{
+    page-break-after:always;
+  }
+
+  #works,
+  #product{
+    page-break-after:always;
+  }
+
+  #study{
+    page-break-after:always;
+  }
+
+  /* =========================
+     WORK DETAIL PAGE
+  ========================= */
+
+  .hero,
+  .page-header{
+    margin:0;
+    padding:0;
+  }
+
+  #work-detail{
+    margin:0;
+    padding:0;
+  }
+
+  .work-detail .work-hero .detail dl { border: 1px solid #bbb; padding: 7mm; }
+
+  .work-detail .work-hero .detail p.lead{
+    margin-top:4mm;
+  }
+  .work-detail section { margin-bottom: 8mm;}
+  .work-detail h2 {margin-bottom: 8mm;}
+  
+  .process-steps{
+    display:block;
+  }
+
+  .process-step{
+    position:relative;
+    padding-left:16mm;
+    padding-bottom:10mm;
+    padding-top: 0;
+  }
+
+  .process-step::before{
+    content:"";
+    position:absolute;
+    left:5mm;
+    top:6mm;
+    bottom:0;
+    width:1px;
+    background:#bbb;
+  }
+
+  .process-step:last-child::before{
+    display:none;
+  }
+
+  .step-no{
+    position:absolute;
+    left:5mm;
+    top:0;
+    width:6mm;
+    height:6mm;
+    line-height:6mm;
+    font-size:9pt;
+  }
+
+  .process-step h3,
+  .process-step p{
+    text-align:left;
+  }
+  .approach-card {
+    page-break-inside: avoid; 
+    break-inside: avoid;
+    border-color: #bbb;
+  }
+
+  .approach-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+  }
+
+}
