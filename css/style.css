@@ -858,6 +858,8 @@ width: 30%;
   font-weight: 600;
 }
 
+.process-summary { margin-bottom: 3em;}
+
 /* 横並び */
 .process-steps {
   max-width: 1000px;
@@ -884,6 +886,9 @@ width: 30%;
   text-align: center;
   position: relative;
   padding-top: 45px;
+}
+.process-step-5 {
+  width: 17%;
 }
 
 /* 丸番号 */
